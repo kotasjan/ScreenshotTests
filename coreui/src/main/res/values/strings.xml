@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">ScreenshotTests</string>
     <string name="feature_button_text">Button Text</string>
+    <string name="feature_title_text">Feature title</string>
+    <string name="feature_about_text">Hello world! This is a test app to show you all, how does Showkase and Paparazzi work!</string>
 </resources>
