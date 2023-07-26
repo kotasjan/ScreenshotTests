@@ -18,5 +18,3 @@ include ':app'
 include ':coreui'
 
 include ':feature:presentation'
-
-include ':screenshots'

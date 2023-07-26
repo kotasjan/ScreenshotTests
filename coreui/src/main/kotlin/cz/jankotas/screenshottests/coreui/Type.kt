@@ -1,4 +1,4 @@
-package cz.jankotas.screenshottests.ui.theme
+package cz.jankotas.screenshottests.coreui
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

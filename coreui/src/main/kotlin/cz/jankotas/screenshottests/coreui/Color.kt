@@ -1,4 +1,4 @@
-package cz.jankotas.screenshottests.ui.theme
+package cz.jankotas.screenshottests.coreui
 
 import androidx.compose.ui.graphics.Color
 

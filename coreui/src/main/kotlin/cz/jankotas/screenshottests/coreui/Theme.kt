@@ -1,4 +1,4 @@
-package cz.jankotas.screenshottests.ui.theme
+package cz.jankotas.screenshottests.coreui
 
 import android.app.Activity
 import android.os.Build
