@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'cz.jankotas.screenshottests.core'
+    namespace 'cz.jankotas.screenshottests.coreui'
     compileSdk 33
 
     defaultConfig {
