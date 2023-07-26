@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ScreenshotTests</string>
+    <string name="feature_button_text">Button Text</string>
+</resources>
