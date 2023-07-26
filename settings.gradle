@@ -14,3 +14,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "ScreenshotTests"
 include ':app'
+
+include ':feature:presentation'
+
+include ':screenshots'
