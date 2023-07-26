@@ -1,4 +1,4 @@
-package cz.jankotas.screenshottests.feature.presentation.components
+package cz.jankotas.screenshottests.coreui.components
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
