@@ -9,6 +9,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
+import cz.jankotas.screenshottests.coreui.ComponentPreview
+import cz.jankotas.screenshottests.coreui.PreviewBox
 
 @Composable
 fun SampleButton(
@@ -30,5 +32,13 @@ fun SampleButton(
             color = MaterialTheme.colorScheme.onPrimary,
             modifier = Modifier.padding(8.dp),
         )
+    }
+}
+
+@Composable
+@ComponentPreview
+fun SampleButtonPreview() {
+    PreviewBox {
+        SampleButton(text = "Button Text", onClick = { })
     }
 }
