@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">ScreenshotTests</string>
-    <string name="feature_button_text">Button Text</string>
     <string name="feature_title_text">Feature title</string>
     <string name="feature_about_text">Hello world! This is a test app to show you all, how does Showkase and Paparazzi work!</string>
+    <string name="app_name">ScreenshotTests</string>
+    <string name="feature_button_open_button_sheet_text">Open bottom sheet</string>
+    <string name="feature_bottom_sheet_title_text">Sheet Title</string>
+    <string name="feature_list_item_text">Sample text %d</string>
 </resources>
