@@ -24,6 +24,7 @@ import cz.jankotas.screenshottests.coreui.model.ListItemModel
 
 @Composable
 fun SampleScreen(
+    onActionButtonClick: () -> Unit = {},
     modifier: Modifier = Modifier,
 ) {
     Scaffold(
@@ -34,8 +35,7 @@ fun SampleScreen(
         floatingActionButton = {
             SampleButton(
                 text = stringResource(R.string.feature_button_open_showkase_text),
-                onClick = {
-                },
+                onClick = onActionButtonClick,
             )
         },
         floatingActionButtonPosition = FabPosition.Center,
