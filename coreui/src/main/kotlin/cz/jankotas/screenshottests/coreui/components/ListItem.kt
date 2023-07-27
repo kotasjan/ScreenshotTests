@@ -1,5 +1,6 @@
 package cz.jankotas.screenshottests.coreui.components
 
+import android.content.res.Configuration
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -12,8 +13,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import cz.jankotas.screenshottests.coreui.ComponentPreview
+import com.airbnb.android.showkase.annotation.ShowkaseComposable
 import cz.jankotas.screenshottests.coreui.PreviewBox
 import cz.jankotas.screenshottests.coreui.model.ListItemModel
 
@@ -42,7 +44,14 @@ fun ListItem(
 }
 
 @Composable
-@ComponentPreview
+@Preview(showBackground = true)
+@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+private fun ListItemLocalPreview() {
+    ListItemPreview()
+}
+
+@Composable
+@ShowkaseComposable(name = "ListItem", group = "Rows")
 fun ListItemPreview() {
     PreviewBox {
         ListItem(ListItemModel(icon = Icons.Default.Done, text = "Sample text"))

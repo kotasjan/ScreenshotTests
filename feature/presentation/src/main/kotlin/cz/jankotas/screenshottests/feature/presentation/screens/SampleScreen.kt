@@ -18,6 +18,7 @@ import cz.jankotas.screenshottests.coreui.PreviewBox
 import cz.jankotas.screenshottests.coreui.R
 import cz.jankotas.screenshottests.coreui.ScreenPreview
 import cz.jankotas.screenshottests.coreui.components.AppBar
+import cz.jankotas.screenshottests.coreui.components.ButtonType
 import cz.jankotas.screenshottests.coreui.components.ListItem
 import cz.jankotas.screenshottests.coreui.components.SampleButton
 import cz.jankotas.screenshottests.coreui.model.ListItemModel
@@ -35,6 +36,7 @@ fun SampleScreen(
         floatingActionButton = {
             SampleButton(
                 text = stringResource(R.string.feature_button_open_showkase_text),
+                type = ButtonType.Filled,
                 onClick = onActionButtonClick,
             )
         },
