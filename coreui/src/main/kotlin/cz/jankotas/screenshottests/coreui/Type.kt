@@ -5,7 +5,9 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.airbnb.android.showkase.annotation.ShowkaseTypography
 
+@ShowkaseTypography
 val bodyLarge = TextStyle(
     fontFamily = FontFamily.Default,
     fontWeight = FontWeight.Normal,
@@ -14,6 +16,7 @@ val bodyLarge = TextStyle(
     letterSpacing = 0.5.sp,
 )
 
+@ShowkaseTypography
 val titleLarge = TextStyle(
     fontFamily = FontFamily.Default,
     fontWeight = FontWeight.Normal,
@@ -22,6 +25,7 @@ val titleLarge = TextStyle(
     letterSpacing = 0.sp,
 )
 
+@ShowkaseTypography
 val labelLarge = TextStyle(
     fontFamily = FontFamily.Default,
     fontWeight = FontWeight.Medium,
