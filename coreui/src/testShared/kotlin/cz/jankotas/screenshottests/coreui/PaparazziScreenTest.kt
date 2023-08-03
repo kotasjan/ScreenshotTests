@@ -26,7 +26,7 @@ abstract class PaparazziScreenTest(
     val paparazzi = Paparazzi(
         maxPercentDifference = 0.0,
         showSystemUi = false,
-        deviceConfig = DeviceConfig.PIXEL_6,
+        deviceConfig = DeviceConfig.PIXEL_5,
         renderingMode = SessionParams.RenderingMode.NORMAL,
     )
 
