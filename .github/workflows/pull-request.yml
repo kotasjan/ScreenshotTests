@@ -1,0 +1,45 @@
+name: Pull request validation
+
+on: pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Build Project
+        run: ./gradlew :app:assembleDebug
+
+      - name: Run screenshot tests
+        id: screenshot-tests
+        run: ./gradlew verifyPaparazziDebug
+
+      - name: Process failed screenshot tests
+        if: failure()
+        id: failed-screenshots
+        run: "./.github/workflows/process_failed_screenshot_tests.sh"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
+          PULL_REQUEST_BRANCH: ${{ github.head_ref }}
+
+      - name: Create an issue if screenshot tests failed
+        uses: octokit/request-action@v2.0.0
+        if: always() && steps.failed-screenshots.outputs.PULL_REQUEST_COMMENT
+        with:
+          route: POST /repos/:repo/issues/:issue_number/comments
+          repo: ${{ github.repository }}
+          issue_number: ${{ steps.failed-screenshots.outputs.PULL_REQUEST_NUMBER }}
+          body: ${{ steps.failed-screenshots.outputs.PULL_REQUEST_COMMENT }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
