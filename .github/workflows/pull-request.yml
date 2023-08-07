@@ -1,6 +1,13 @@
 name: Pull request validation
 
-on: pull_request
+on:
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: pr-main-${{ github.head_ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
