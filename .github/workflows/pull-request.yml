@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  screenshot-tests:
     runs-on: ubuntu-latest
     steps:
       - name: Check out
