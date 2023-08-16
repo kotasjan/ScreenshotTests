@@ -79,7 +79,7 @@ private fun SampleButtonLocalPreview() {
 @ShowkaseComposable(name = "SampleButton", group = "Controls", styleName = "Filled")
 fun SampleButtonFilledPreview() {
     PreviewBox {
-        SampleButton(text = "Button Text", type = ButtonType.Filled, onClick = { })
+        SampleButton(text = "Changed Text", type = ButtonType.Filled, onClick = { })
     }
 }
 
@@ -87,6 +87,6 @@ fun SampleButtonFilledPreview() {
 @ShowkaseComposable(name = "SampleButton", group = "Controls", styleName = "Outlined")
 fun SampleButtonOutlinedPreview() {
     PreviewBox {
-        SampleButton(text = "Button Text", type = ButtonType.Outlined, onClick = { })
+        SampleButton(text = "Changed Text", type = ButtonType.Outlined, onClick = { })
     }
 }
