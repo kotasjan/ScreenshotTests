@@ -27,14 +27,14 @@ jobs:
 
       - name: Run screenshot tests
         id: screenshot-tests
-        run: ./gradlew verifyPaparazziDebug
+        run: ./gradlew verifyPaparazziDebug --continue
 
       - name: Upload artifact 1
         if: failure()
         uses: actions/upload-artifact@v3
         with:
           name: screenshot-report1
-          path: /home/runner/work/ScreenshotTests/ScreenshotTests/feature/presentation/build/reports/tests/testDebugUnitTest/
+          path: /home/runner/work/ScreenshotTests/ScreenshotTests/**/build/reports/tests/testDebugUnitTest/
 
       - name: Process failed screenshot tests
         if: failure()
@@ -61,4 +61,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: screenshot-report2
-          path: /home/runner/work/ScreenshotTests/ScreenshotTests/feature/presentation/build/reports/tests/testDebugUnitTest/
+          path: /home/runner/work/ScreenshotTests/ScreenshotTests/**/build/reports/tests/testDebugUnitTest/
