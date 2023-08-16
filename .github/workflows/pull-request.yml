@@ -16,6 +16,7 @@ jobs:
       - name: Check out
         uses: actions/checkout@v3
         with:
+          lfs: true
           fetch-depth: 0
 
       - name: Setup JDK
@@ -23,9 +24,6 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '17'
-
-      - name: Build Project
-        run: ./gradlew :app:assembleDebug
 
       - name: Run screenshot tests
         id: screenshot-tests
