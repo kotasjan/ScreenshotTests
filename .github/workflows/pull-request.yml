@@ -29,7 +29,14 @@ jobs:
 
       - name: Run screenshot tests
         id: screenshot-tests
-        run: ./gradlew verifyPaparazziDebug --scan
+        run: ./gradlew verifyPaparazziDebug
+
+      - name: Upload artifact 1
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: screenshot-report1
+          path: /home/runner/work/ScreenshotTests/ScreenshotTests/feature/presentation/build/reports/tests/testDebugUnitTest/
 
       - name: Process failed screenshot tests
         if: failure()
@@ -50,3 +57,10 @@ jobs:
           body: ${{ steps.failed-screenshots.outputs.PULL_REQUEST_COMMENT }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload artifact 2
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: screenshot-report2
+          path: /home/runner/work/ScreenshotTests/ScreenshotTests/feature/presentation/build/reports/tests/testDebugUnitTest/
