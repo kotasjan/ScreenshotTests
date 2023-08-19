@@ -1,4 +1,4 @@
-package cz.jankotas.screenshottests.coreui
+package cz.jankotas.screenshottests.coreui.screenshots
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -14,6 +14,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.airbnb.android.showkase.models.Showkase
 import com.airbnb.android.showkase.models.ShowkaseBrowserColor
+import cz.jankotas.screenshottests.coreui.PreviewBox
+import cz.jankotas.screenshottests.coreui.getMetadata
 import org.junit.runners.Parameterized
 
 /**

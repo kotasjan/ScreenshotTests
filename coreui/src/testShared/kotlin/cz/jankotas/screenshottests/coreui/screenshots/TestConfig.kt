@@ -1,4 +1,4 @@
-package cz.jankotas.screenshottests.coreui
+package cz.jankotas.screenshottests.coreui.screenshots
 
 import com.android.resources.NightMode
 

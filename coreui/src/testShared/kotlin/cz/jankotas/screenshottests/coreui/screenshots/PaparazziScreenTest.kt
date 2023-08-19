@@ -1,4 +1,4 @@
-package cz.jankotas.screenshottests.coreui
+package cz.jankotas.screenshottests.coreui.screenshots
 
 import androidx.compose.runtime.Composable
 import app.cash.paparazzi.DeviceConfig

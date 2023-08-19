@@ -1,4 +1,4 @@
-package cz.jankotas.screenshottests.coreui
+package cz.jankotas.screenshottests.coreui.screenshots
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -8,6 +8,8 @@ import androidx.compose.ui.Modifier
 import com.airbnb.android.showkase.models.Showkase
 import com.airbnb.android.showkase.models.ShowkaseBrowserTypography
 import com.airbnb.android.showkase.ui.padding4x
+import cz.jankotas.screenshottests.coreui.PreviewBox
+import cz.jankotas.screenshottests.coreui.getMetadata
 import org.junit.runners.Parameterized
 import java.util.Locale
 
