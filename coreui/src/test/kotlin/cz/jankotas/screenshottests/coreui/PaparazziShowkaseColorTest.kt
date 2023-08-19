@@ -48,7 +48,7 @@ class ColorPreview(
     }
 
     override fun toString(): String =
-        colorBrowserColor.colorGroup + ":" + colorBrowserColor.colorName
+        "color=${colorBrowserColor.colorGroup}:${colorBrowserColor.colorName}"
 }
 
 /**

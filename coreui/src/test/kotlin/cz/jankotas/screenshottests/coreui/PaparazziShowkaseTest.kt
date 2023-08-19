@@ -3,6 +3,7 @@ package cz.jankotas.screenshottests.coreui
 import app.cash.paparazzi.DeviceConfig
 import app.cash.paparazzi.Paparazzi
 import com.android.ide.common.rendering.api.SessionParams
+import com.android.resources.NightMode
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -13,14 +14,12 @@ import org.junit.runners.Parameterized
  *
  * @param T type of [ScreenshotPreview]
  * @param preview instance of specific [ScreenshotPreview] (component, typography or color)
- * @param theme dark or light theme configuration
- * @param fontScale displayed text scaling
+ * @param config configuration for given test (device, night mode, font scale)
  */
 @RunWith(Parameterized::class)
 abstract class PaparazziShowkaseTest<T : ScreenshotPreview>(
     private val preview: T,
-    private val theme: Theme = Theme.Light,
-    private val fontScale: FontScale = FontScale.Scale100,
+    config: TestConfig = TestConfig(Device.PIXEL_6, NightMode.NOTNIGHT, 1f),
 ) {
     /**
      * Paparazzi configuration.
@@ -29,7 +28,13 @@ abstract class PaparazziShowkaseTest<T : ScreenshotPreview>(
     val paparazzi = Paparazzi(
         maxPercentDifference = 0.0,
         showSystemUi = false,
-        deviceConfig = DeviceConfig.PIXEL_5,
+        deviceConfig = when (config.device) {
+            Device.PIXEL_6 -> DeviceConfig.PIXEL_6
+            Device.PIXEL_C -> DeviceConfig.PIXEL_C
+        }.copy(
+            nightMode = config.nightMode,
+            fontScale = config.fontScale,
+        ),
         renderingMode = SessionParams.RenderingMode.SHRINK,
     )
 
@@ -39,11 +44,7 @@ abstract class PaparazziShowkaseTest<T : ScreenshotPreview>(
     @Test
     fun screenshotTest() {
         paparazzi.snapshot {
-            compositionProvider(
-                theme = theme,
-                fontScale = fontScale,
-                content = preview.content,
-            )
+            preview.content.invoke()
         }
     }
 }

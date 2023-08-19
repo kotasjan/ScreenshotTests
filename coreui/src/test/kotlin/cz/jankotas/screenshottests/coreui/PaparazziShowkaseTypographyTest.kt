@@ -37,7 +37,7 @@ class TypographyPreview(
     }
 
     override fun toString(): String =
-        showkaseBrowserTypography.typographyGroup + ":" + showkaseBrowserTypography.typographyName
+        "typography=${showkaseBrowserTypography.typographyGroup}:${showkaseBrowserTypography.typographyName}"
 }
 
 /**
