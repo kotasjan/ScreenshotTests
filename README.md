@@ -73,6 +73,8 @@ to [`.github/workflows/pull-request.yml`](https://github.com/kotasjan/Screenshot
 
 ## Branches:
 
+- **main**: Core branch which also contains some recent updates of Paparazzi configuration and other
+  minor changes.
 - **showkase**: Setup of Showkase library & use of annotations for components, colors, and
   typography.
 - **paparazzi**: Integrates Paparazzi, sets up GIT LFS, githooks, and contains screenshot tests for
