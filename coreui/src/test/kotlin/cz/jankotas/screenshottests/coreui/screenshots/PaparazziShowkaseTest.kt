@@ -4,6 +4,8 @@ import app.cash.paparazzi.DeviceConfig
 import app.cash.paparazzi.Paparazzi
 import com.android.ide.common.rendering.api.SessionParams
 import com.android.resources.NightMode
+import cz.jankotas.screenshottests.coretest.Device
+import cz.jankotas.screenshottests.coretest.TestConfig
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

@@ -16,5 +16,6 @@ rootProject.name = "ScreenshotTests"
 include ':app'
 
 include ':coreui'
+include ':coretest'
 
 include ':feature:presentation'

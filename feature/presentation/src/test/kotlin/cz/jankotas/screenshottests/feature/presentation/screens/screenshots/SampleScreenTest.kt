@@ -1,7 +1,7 @@
 package cz.jankotas.screenshottests.feature.presentation.screens.screenshots
 
-import cz.jankotas.screenshottests.coreui.screenshots.PaparazziScreenTest
-import cz.jankotas.screenshottests.coreui.screenshots.TestConfig
+import cz.jankotas.screenshottests.coretest.PaparazziScreenTest
+import cz.jankotas.screenshottests.coretest.TestConfig
 import cz.jankotas.screenshottests.feature.presentation.screens.SampleScreenPreview
 import org.junit.Test
 
