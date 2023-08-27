@@ -4,6 +4,8 @@ import androidx.compose.runtime.Composable
 import com.airbnb.android.showkase.models.Showkase
 import com.airbnb.android.showkase.models.ShowkaseBrowserComponent
 import com.android.resources.NightMode
+import cz.jankotas.screenshottests.coretest.Device
+import cz.jankotas.screenshottests.coretest.TestConfig
 import cz.jankotas.screenshottests.coreui.getMetadata
 import org.junit.runners.Parameterized
 
