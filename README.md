@@ -83,7 +83,7 @@ to [`.github/workflows/pull-request.yml`](https://github.com/kotasjan/Screenshot
   components, colors, and typography.
 - **github-action**: Contains the Github Action setup for pull request checks, ensuring all
   screenshots are updated.
-- **example-ui-change**: Demonstrates a simple UI change that leads to screenshot tests failing.
+- **example-change**: Demonstrates a simple UI change that leads to screenshot tests failing.
   Observe the impact of this change in an
   open [pull request](https://github.com/kotasjan/ScreenshotTests/pull/4), where you can see the
   Github Action job failure. The resulting comment in the pull request provides
