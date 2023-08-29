@@ -1,8 +1,9 @@
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
-    id("com.google.devtools.ksp")
-    id("app.cash.paparazzi")
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.ksp)
+    alias(libs.plugins.paparazzi)
 }
 
 android {
@@ -38,7 +39,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
     }
 
     kotlinOptions {
@@ -51,18 +52,17 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.10.1")
+    implementation(libs.androidx.ktx)
 
-    implementation("androidx.compose.compiler:compiler:1.5.1")
-    implementation(platform("androidx.compose:compose-bom:2023.06.01"))
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.material3:material3")
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.material)
 
-    debugImplementation("androidx.compose.ui:ui-tooling")
+    debugImplementation(libs.androidx.compose.ui.tooling)
 
-    implementation("com.airbnb.android:showkase:1.0.0-beta18")
-    ksp("com.airbnb.android:showkase-processor:1.0.0-beta18")
+    implementation(libs.showkase)
+    ksp(libs.showkase.processor)
 
     testImplementation(project(":coretest"))
-    testImplementation("junit:junit:4.13.2")
+    testImplementation(libs.junit)
 }

@@ -1,17 +1,18 @@
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id("com.google.devtools.ksp")
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.ksp)
 }
 
 android {
     namespace = "cz.jankotas.screenshottests"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "cz.jankotas.screenshottests"
         minSdk = 26
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
     }
@@ -40,7 +41,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
     }
 
     packaging {
@@ -58,16 +59,15 @@ dependencies {
     implementation(project(":coreui"))
     implementation(project(":feature:presentation"))
 
-    implementation("androidx.core:core-ktx:1.10.1")
-    implementation("androidx.activity:activity-compose:1.7.2")
+    implementation(libs.androidx.ktx)
+    implementation(libs.androidx.activity.compose)
 
-    implementation("androidx.compose.compiler:compiler:1.5.1")
-    implementation(platform("androidx.compose:compose-bom:2023.06.01"))
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.material3:material3")
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.material)
 
-    implementation("com.airbnb.android:showkase:1.0.0-beta18")
-    ksp("com.airbnb.android:showkase-processor:1.0.0-beta18")
+    implementation(libs.showkase)
+    ksp(libs.showkase.processor)
 
-    testImplementation("junit:junit:4.13.2")
+    testImplementation(libs.junit)
 }
