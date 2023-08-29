@@ -12,10 +12,12 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+
 rootProject.name = "ScreenshotTests"
-include ':app'
 
-include ':coreui'
-include ':coretest'
+include(":app")
 
-include ':feature:presentation'
+include(":coreui")
+include(":coretest")
+
+include(":feature:presentation")
