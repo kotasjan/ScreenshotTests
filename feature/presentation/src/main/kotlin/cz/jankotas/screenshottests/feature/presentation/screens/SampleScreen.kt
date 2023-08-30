@@ -57,7 +57,7 @@ fun SampleScreen(
                     style = MaterialTheme.typography.bodyMedium,
                 )
             }
-            items(5) { index ->
+            items(4) { index ->
                 ListItem(
                     modifier = Modifier
                         .padding(horizontal = 16.dp),
