@@ -8,7 +8,6 @@ import androidx.compose.ui.Modifier
 import com.airbnb.android.showkase.models.Showkase
 import com.airbnb.android.showkase.models.ShowkaseBrowserTypography
 import com.airbnb.android.showkase.ui.padding4x
-import cz.jankotas.screenshottests.coreui.PreviewBox
 import cz.jankotas.screenshottests.coreui.getMetadata
 import org.junit.runners.Parameterized
 import java.util.Locale
@@ -25,17 +24,15 @@ class TypographyPreview(
 ) : ScreenshotPreview {
 
     override val content: @Composable () -> Unit = {
-        PreviewBox {
-            Text(
-                text = showkaseBrowserTypography.typographyName.replaceFirstChar {
-                    it.titlecase(Locale.getDefault())
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(padding4x),
-                style = showkaseBrowserTypography.textStyle,
-            )
-        }
+        Text(
+            text = showkaseBrowserTypography.typographyName.replaceFirstChar {
+                it.titlecase(Locale.getDefault())
+            },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(padding4x),
+            style = showkaseBrowserTypography.textStyle,
+        )
     }
 
     override fun toString(): String =

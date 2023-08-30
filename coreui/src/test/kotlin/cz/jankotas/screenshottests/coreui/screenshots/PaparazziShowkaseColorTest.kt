@@ -14,7 +14,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.airbnb.android.showkase.models.Showkase
 import com.airbnb.android.showkase.models.ShowkaseBrowserColor
-import cz.jankotas.screenshottests.coreui.PreviewBox
 import cz.jankotas.screenshottests.coreui.getMetadata
 import org.junit.runners.Parameterized
 
@@ -29,23 +28,21 @@ class ColorPreview(
 ) : ScreenshotPreview {
 
     override val content: @Composable () -> Unit = {
-        PreviewBox {
-            val backgroundColor = colorBrowserColor.color
-            val textColor = if (backgroundColor.luminance() < 0.5) {
-                Color.White
-            } else {
-                Color.Black
-            }
-            Box(
-                modifier = Modifier.fillMaxWidth().height(200.dp).background(backgroundColor),
-                contentAlignment = Alignment.Center,
-            ) {
-                Text(
-                    text = colorBrowserColor.colorName,
-                    fontSize = 18.sp,
-                    color = textColor,
-                )
-            }
+        val backgroundColor = colorBrowserColor.color
+        val textColor = if (backgroundColor.luminance() < 0.5) {
+            Color.White
+        } else {
+            Color.Black
+        }
+        Box(
+            modifier = Modifier.fillMaxWidth().height(200.dp).background(backgroundColor),
+            contentAlignment = Alignment.Center,
+        ) {
+            Text(
+                text = colorBrowserColor.colorName,
+                fontSize = 18.sp,
+                color = textColor,
+            )
         }
     }
 
